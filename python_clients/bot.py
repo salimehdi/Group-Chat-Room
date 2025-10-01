@@ -52,8 +52,9 @@ def multicast_listener():
     except Exception as e:
         print(f"Error binding multicast socket: {e}", file=sys.stderr)
         return
-
-    mreq = struct.pack("4sl", socket.inet_aton(MCAST_GROUP), socket.INADDR_ANY)
+    
+    group = socket.inet_aton(MCAST_GROUP)
+    mreq = struct.pack("4sl", group, socket.INADDR_ANY)
     sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq)
     
     print(f"Subscribed to multicast group {MCAST_GROUP}:{MCAST_PORT}")
@@ -61,6 +62,7 @@ def multicast_listener():
     while True:
         try:
             data, _ = sock.recvfrom(BUFFER_SIZE)
+            print(f"Received multicast: {data.decode('utf-8')}")
             parts = data.decode('utf-8').split(':')
             if len(parts) >= 3:
                 try:
