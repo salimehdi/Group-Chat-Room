@@ -1,6 +1,6 @@
 # Low-Latency Group Chat Room
 
-This project is a high-performance, low-latency group chat server and client implementation in C++. It demonstrates advanced network programming techniques, including the use of `epoll` for efficient I/O, lock-free data structures for inter-thread communication, and UDP multicast for low-latency broadcasting. The project also includes a suite of Python-based tools for benchmarking and load testing.
+This project is a high-performance, low-latency group chat server and client implementation in C++. It demonstrates advanced network programming techniques, including the use of `epoll` for efficient I/O, lock-free data structures for inter-thread communication, and UDP multicast for low-latency broadcasting. The project also includes a suite of Python-based tools for load testing.
 
 ---
 
@@ -12,8 +12,7 @@ This project is a high-performance, low-latency group chat server and client imp
     * **`thread` mode**: A baseline "thread-per-connection" mode for comparison.
 * **TCP and UDP Multicast**: The server forwards messages to all connected TCP clients and broadcasts them via UDP multicast for applications that require the lowest possible latency.
 * **Lock-Free Queue**: A lock-free queue is used for efficient message passing between the I/O thread and the broadcaster thread, minimizing contention and improving performance.
-* **Python Client Bots**: A Python-based client bot is provided to simulate a large number of clients for load testing and benchmarking. The bots can measure and report round-trip time (RTT) for TCP and one-way latency for UDP multicast.
-* **Automated Benchmarking**: The project includes shell scripts to automate the process of building the server, running various benchmark scenarios, and aggregating the results into a CSV file.
+* **Python Client Bots**: A Python-based client bot is provided to simulate a large number of clients for load testing.
 
 ---
 

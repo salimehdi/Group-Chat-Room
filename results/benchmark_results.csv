@@ -1,4 +1,0 @@
-TestName,AvgLatency_us,AvgP99Latency_us,Throughput_msgs_sec
-Epoll_TCP,-2.14348e+12,31969.2,2000
-ThreadPerConn_TCP,-7.70481e+11,9228.31,500
-Epoll_UDP_Multicast,N/A,N/A,N/A

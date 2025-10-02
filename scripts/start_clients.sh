@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ -z "$1" ]; then
   echo "Usage: $0 <num_clients> [duration_seconds]"
   exit 1
